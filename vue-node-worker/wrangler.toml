@@ -1,0 +1,10 @@
+name = "vue-node-worker"
+main = "src/index.ts"
+compatibility_date = "2022-07-28"
+
+[vars]
+API_URL_DEV = "https://rickandmortyapi.com/api/character/61"
+API_URL_TEST = "https://rickandmortyapi.com/api/character/281"
+API_URL_STAGING = "https://rickandmortyapi.com/api/character/628"
+API_URL_PRODUCTION = "https://rickandmortyapi.com/api/character/773"
+STRIPE_TOKEN = "pk_xyz1234_test"
