@@ -4,7 +4,13 @@ import { reactive } from "vue";
 const data = reactive({ result: {} });
 
 const fetchData = async () => {
-  data.result = await (await fetch("http://localhost:8787")).json();
+  try {
+    data.result = await (
+      await fetch("https://vue-node-worker.mahmedexec.workers.dev/")
+    ).json();
+  } catch (error) {
+    error.value = true;
+  }
 };
 
 fetchData();
@@ -12,7 +18,7 @@ fetchData();
 
 <template>
   <div class="main" v-if="Object.keys(data.result).length > 0">
-    <p class="subtitle" style="color: cadetblue">Environment: Production</p>
+    <p class="subtitle" style="color: cadetblue">Environment: Staging</p>
 
     <div class="flex-container">
       <img :src="data.result.image" :alt="data.result.name" class="image" />
@@ -25,7 +31,7 @@ fetchData();
     </div>
   </div>
 
-  <div v-else style="margin: 0px auto">Loading....</div>
+  <div v-else-if="!error">Loading....</div>
 </template>
 
 <style scoped>
