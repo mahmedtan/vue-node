@@ -18,7 +18,7 @@ fetchData();
 
 <template>
   <div class="main" v-if="Object.keys(data.result).length > 0">
-    <p class="subtitle" style="color: cadetblue">Environment: Staging</p>
+    <p class="subtitle" style="color: cadetblue">Environment: Dev</p>
 
     <div class="flex-container">
       <img :src="data.result.image" :alt="data.result.name" class="image" />
