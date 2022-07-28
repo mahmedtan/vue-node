@@ -16,7 +16,10 @@ export default {
     console.log(request.url, ctx);
 
     return new Response(JSON.stringify(data), {
-      headers: { "content-type": "application/json;charset=UTF-8" },
+      headers: {
+        "content-type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+      },
     });
   },
 };
